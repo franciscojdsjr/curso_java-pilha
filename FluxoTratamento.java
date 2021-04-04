@@ -4,10 +4,10 @@ public class FluxoTratamento {
 		System.out.println("Ini do main");
 		try {
 			metodo1();
-		} catch (ArithmeticException | NullPointerException ex) {
-			String msg = ex.getMessage();
+		} catch (ArithmeticException | NullPointerException execption) {
+			String msg = execption.getMessage();
 			System.out.println("ArithmeticException " + msg);
-			ex.printStackTrace();
+			execption.printStackTrace();
 		}
 		System.out.println("Fim do main");
 	}
@@ -21,6 +21,9 @@ public class FluxoTratamento {
 	private static void metodo2() {
 		System.out.println("Ini do metodo2");
 
-		System.out.println("Fim do metodo2");
+		ArithmeticException execption = new ArithmeticException();
+		throw execption;
+
+		// System.out.println("Fim do metodo2");
 	}
 }
